@@ -90,6 +90,17 @@ function createWindow() {
 		}
 	})
 
+	// disable external links if enabled
+	win.webContents.on('will-navigate', (event, url) => {
+		const allowedDomain = store.get("settings.url").replace(/^(https?:\/\/)?/, '');
+		if (store.get("settings.disableExternalLinks") ) {
+		  if (!url.startsWith('app://') &&  !url.includes(allowedDomain) ) {
+			  event.preventDefault(); // Prevent navigation to external URLs
+		  }
+		}
+	  });
+	
+
 	// FIX CORS ERROR: https://pratikpc.medium.com/bypassing-cors-with-electron-ab7eaf331605
 	win.webContents.session.webRequest.onBeforeSendHeaders(
 		(details, callback) => {

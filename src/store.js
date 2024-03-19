@@ -8,7 +8,7 @@ const store = new Store({
 			properties: {
 				url: {
 					type: 'string',
-					default: 'https://www.on-system.net'
+					default: 'https://www.zelenamisia.sk'
 				},
 				autoLoad: {
 					type: 'boolean',
@@ -37,20 +37,25 @@ const store = new Store({
 				autoReloadEvery: {
 					type: 'string',
 					default: '1h30m'
+				},
+				disableExternalLinks: {
+					type: 'boolean',
+					default: true
 				}
 			}
 		}
 	},
 	defaults: {
 		settings: {
-			url: 'https://www.on-system.net',
+			url: 'https://www.zelenamisia.sk',
 			autoLoad: false,
 			dark: true,
 			cacheLimit: 500,
 			autoReload: false,
 			autoReloadMode: 'every',
 			autoReloadHour: 0, // midnight
-			autoReloadEvery: '1h30m'
+			autoReloadEvery: '1h30m',
+			disableExternalLinks: true
 		}
 	}
 })

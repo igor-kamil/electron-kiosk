@@ -48,6 +48,7 @@
 									>
 									</v-switch>
 								</v-col>
+
 								<v-col :cols="12" :sm="3">
 									<v-radio-group
 										v-if="settings.autoReload"
@@ -100,6 +101,15 @@
 										<template v-slot:label>
 											{{ settings.dark ? '🌙' : '☀️' }}
 										</template>
+									</v-switch>
+								</v-col>
+								<v-col :cols="12" :sm="6">
+									<v-switch
+										v-model="settings.disableExternalLinks"
+										inset
+										label="Disable external links"
+										class="ml-3"
+									>
 									</v-switch>
 								</v-col>
 							</v-row>
