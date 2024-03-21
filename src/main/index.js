@@ -99,7 +99,10 @@ function createWindow() {
 		  }
 		}
 	  });
-	
+
+	win.webContents.setWindowOpenHandler(() => {
+		return { action: "deny" };
+	});
 
 	// FIX CORS ERROR: https://pratikpc.medium.com/bypassing-cors-with-electron-ab7eaf331605
 	win.webContents.session.webRequest.onBeforeSendHeaders(
