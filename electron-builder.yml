@@ -12,6 +12,8 @@ files:
 asarUnpack:
   - resources/**
 win:
+  target:
+    - nsis
   executableName: electron-kiosk
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
